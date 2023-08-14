@@ -6,12 +6,12 @@ use lutgen::{
     },
     GenerateLut, identity::correct_image,
 };
-use core::fmt;
 use std::path::PathBuf;
 use lutgen_palettes::Palette;
 
 const SEED: u64 = u64::from_be_bytes(*b"42080085");
 
+#[derive(Debug)]
 pub enum Flavor {
     Latte,
     Frappe,
