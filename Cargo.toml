@@ -2,7 +2,12 @@
 name = "catppuccinifier-rs"
 version = "0.1.0"
 edition = "2021"
+description = "A crate containing code that is used on catppuccinifier cli and gui"
+repository = "https://github.com/lighttigerXIV/catppuccinifier-rs"
+license = "MIT"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+lutgen = "0.8.3"
+lutgen-palettes  = "0.2"
+image = "0.24.6"
