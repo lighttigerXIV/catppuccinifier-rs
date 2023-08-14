@@ -11,7 +11,7 @@ use lutgen_palettes::Palette;
 
 const SEED: u64 = u64::from_be_bytes(*b"42080085");
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub enum Flavor {
     Latte,
     Frappe,
@@ -21,7 +21,7 @@ pub enum Flavor {
 }
 
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub enum Algorithm {
     ShepardsMethod,
     GaussianRBF,
