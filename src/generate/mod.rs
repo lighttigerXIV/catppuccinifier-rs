@@ -6,6 +6,7 @@ use lutgen::{
     },
     GenerateLut, identity::correct_image,
 };
+use core::fmt;
 use std::path::PathBuf;
 use lutgen_palettes::Palette;
 
@@ -19,6 +20,8 @@ pub enum Flavor {
     Oled,
 }
 
+
+#[derive(Debug)]
 pub enum Algorithm {
     ShepardsMethod,
     GaussianRBF,
@@ -26,6 +29,7 @@ pub enum Algorithm {
     GaussianSampling,
     NearestNeighbor,
 }
+
 
 pub struct GenerateProperties {
     hald_level: u8,
