@@ -32,15 +32,15 @@ pub enum Algorithm {
 
 
 pub struct GenerateProperties {
-    hald_level: u8,
-    luminosity: f64,
-    algorithm: Algorithm,
-    shape: f64,
-    nearest: usize,
-    mean: f64,
-    std: f64,
-    iterations: usize,
-    power: f64,
+    pub hald_level: u8,
+    pub luminosity: f64,
+    pub algorithm: Algorithm,
+    pub shape: f64,
+    pub nearest: usize,
+    pub mean: f64,
+    pub std: f64,
+    pub iterations: usize,
+    pub power: f64,
 }
 
 pub fn generate_image(
