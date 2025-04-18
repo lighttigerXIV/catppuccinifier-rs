@@ -1,13 +1,13 @@
 [package]
 name = "catppuccinifier-rs"
-version = "0.1.0"
+version = "1.1.0"
 edition = "2021"
-description = "A crate containing code that is used on catppuccinifier cli and gui"
+description = "A crate to unify image generation for catppuccinifier"
 repository = "https://github.com/lighttigerXIV/catppuccinifier-rs"
 license = "MIT"
 
 
 [dependencies]
-lutgen = "0.8.3"
-lutgen-palettes  = "0.2"
-image = "0.24.6"
+lutgen = "0.12.0"
+lutgen-palettes  = "0.4.0"
+image = "0.25.6"
