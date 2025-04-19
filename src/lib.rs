@@ -1,7 +1,7 @@
 use std::{error::Error, path::Path};
 
 use generation::{Algorithm, Flavor, Properties};
-use image::{open, RgbaImage};
+use image::{open, RgbImage, RgbaImage};
 use lutgen::{
     identity::correct_image,
     interpolation::{
@@ -82,8 +82,19 @@ pub fn catppuccinify<P: AsRef<Path>>(
 
     correct_image(&mut target_rgba, &lut);
 
-    return match target_rgba.save(output_path) {
+    return match target_rgba.save(&output_path) {
         Ok(_) => Ok(()),
-        Err(e) => Err(e.into()),
+        Err(_) => {
+            let rgb_image: RgbImage =
+                RgbImage::from_fn(target_rgba.width(), target_rgba.height(), |x, y| {
+                    let pixel = target_rgba.get_pixel(x, y);
+                    image::Rgb([pixel[0], pixel[1], pixel[2]])
+                });
+
+            match rgb_image.save(&output_path) {
+                Ok(_) => Ok(()),
+                Err(e) => Err(e.into()),
+            }
+        }
     };
 }
