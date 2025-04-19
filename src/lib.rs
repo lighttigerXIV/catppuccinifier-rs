@@ -17,8 +17,8 @@ pub mod generation;
 const GENERATION_SEED: u64 = u64::from_be_bytes(*b"42080085");
 
 pub fn catppuccinify<P: AsRef<Path>>(
-    properties: Properties,
-    flavor: Flavor,
+    properties: &Properties,
+    flavor: &Flavor,
     target_image_path: P,
     output_image_path: P,
 ) -> Result<(), Box<dyn Error>> {
