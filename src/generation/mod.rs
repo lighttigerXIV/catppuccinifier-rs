@@ -1,3 +1,5 @@
+use serde::{Deserialize, Serialize};
+
 #[derive(Debug, Clone)]
 pub enum Flavor {
     Latte,
@@ -7,7 +9,7 @@ pub enum Flavor {
     Oled,
 }
 
-#[derive(Debug, Clone)]
+#[derive(Serialize, Deserialize, Debug, Clone)]
 pub enum Algorithm {
     ShepardsMethod,
     GaussianRBF,
@@ -16,6 +18,7 @@ pub enum Algorithm {
     NearestNeighbor,
 }
 
+#[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct Properties {
     pub hald_level: u8,
     pub luminosity: f64,
