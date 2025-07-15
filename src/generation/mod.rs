@@ -15,7 +15,7 @@ pub enum Algorithm {
     GaussianRBF,
     LinearRBF,
     GaussianSampling,
-    NearestNeighbor,
+    NearestNeighbour,
 }
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
